@@ -1,6 +1,6 @@
 # detour-proxy
 
-![under construction](https://cloud.githubusercontent.com/assets/707098/11125216/b5554b94-8936-11e5-921d-c03b0ef82c3c.png)
+![under construction](https://cloud.githubusercontent.com/assets/707098/11125298/2cc30770-8937-11e5-9bec-97c5bb4da0f1.gif)
 
 a tiny proxy for dirverting pattern-matched http requests to a local server
 
