@@ -23,9 +23,16 @@ Usage of detour-proxy:
 
 ##### Example
 
-This will direct requests from `http://www.stg.nytimes.com` to `http://127.0.0.1:8080` IF they match `^/svc/community/personas/*`ed; ELSE they will be directed to `http://www.stg.gtm.nytimes.com`:
+This will direct requests from `http://www.stg.nytimes.com`:
+- to `http://127.0.0.1:8080` IF they match `^/svc/community/personas/*`
+- ELSE they will be directed to `http://www.stg.gtm.nytimes.com`
+
 ```
-detour-proxy -from www.stg.nytimes.com -routes "^/svc/community/personas/*" -url "http://127.0.0.1:8080" -destination "http://www.stg.gtm.nytimes.com"
+detour-proxy \
+	-from www.stg.nytimes.com \
+	-routes "^/svc/community/personas/*" \
+	-url "http://127.0.0.1:8080" \
+	-destination "http://www.stg.gtm.nytimes.com"
 ````
 
 #### Daps
