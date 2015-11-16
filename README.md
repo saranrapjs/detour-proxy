@@ -11,6 +11,8 @@ $ detour-proxy -h
 Usage of detour-proxy:
   -destination string
     	destination for non-detoured routes (default "http://www.stg.gtm.nytimes.com")
+  -from string
+    	(optional) manage the /etc/hosts entry for the intended detour 'from' host    	
   -port string
     	default listening port, ':80', ':8080'... (default ":80")
   -routes string
@@ -18,6 +20,13 @@ Usage of detour-proxy:
   -url string
     	default redirect url, 'http://127.0.0.1:8080' (default "http://127.0.0.1:8080")
 ```
+
+##### Example
+
+This will direct requests from `http://www.stg.nytimes.com` to `http://127.0.0.1:8080` IF they match `^/svc/community/personas/*`ed; ELSE they will be directed to `http://www.stg.gtm.nytimes.com`:
+```
+detour-proxy -from www.stg.nytimes.com -routes "^/svc/community/personas/*" -url "http://127.0.0.1:8080" -destination "http://www.stg.gtm.nytimes.com"
+````
 
 #### Daps
 
